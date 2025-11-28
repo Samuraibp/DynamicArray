@@ -115,3 +115,52 @@ void DynamicArray::Reverse()
 		j--;
 	}
 }
+
+DynamicArray DynamicArray::operator+(int)
+{
+	DynamicArray temp(size + 10);
+
+	for (int i = 0; i < size; i++)
+		temp.ptr[i] = this->ptr[i];
+
+	for (int i = size; i < size + 10; i++)
+		temp.ptr[i] = 0;
+
+	return temp;
+}
+
+DynamicArray DynamicArray::operator-(int)
+{
+	if (size > 2)
+	{
+		DynamicArray temp(size - 2);
+
+		for (int i = 0; i < temp.size; i++)
+			temp.ptr[i] = this->ptr[i];
+		return temp;
+	}
+	return *this;
+}
+
+DynamicArray DynamicArray::operator-(const DynamicArray& b)
+{
+	int minSize = (size < b.size ? size : b.size);
+
+	DynamicArray temp(minSize);
+
+	for (int i = 0; i < minSize; i++)
+		temp.ptr[i] = this->ptr[i] - b.ptr[i];
+
+	return temp;
+}
+
+
+DynamicArray DynamicArray::operator*(int)
+{
+	DynamicArray temp(size);
+
+	for (int i = 0; i < size; i++)
+		temp.ptr[i] = this->ptr[i] * 2;
+
+	return temp;
+}

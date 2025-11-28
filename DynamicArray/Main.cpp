@@ -47,5 +47,14 @@ int main()
 	b.Output();
 	cout << endl;
 
+	DynamicArray c = b + 10;
+	c.Output();
+
+	DynamicArray x = c - 2;
+	x.Output();
+
+	DynamicArray y = x * 2;
+	y.Output();
+
 	system("pause");
 }

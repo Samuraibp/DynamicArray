@@ -20,7 +20,10 @@ public:
 	void Sort();
 	int Search(int a) const;
 	void Reverse();
-
+	DynamicArray operator+(int);
+	DynamicArray operator-(int);
+	DynamicArray operator-(const DynamicArray& b);
+	DynamicArray operator*(int);
 	// реилизовать следующие методы:
 	//void ReSize(int size);// изменение размера массива
 	//void Sort();// сортировка(любой алгоритм сортировки)
