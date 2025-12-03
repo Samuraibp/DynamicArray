@@ -144,7 +144,7 @@ DynamicArray DynamicArray::operator-(int)
 
 DynamicArray DynamicArray::operator-(const DynamicArray& b)
 {
-	int minSize = (size < b.size ? size : b.size);
+	int minSize = min(size, b.size);
 
 	DynamicArray temp(minSize);
 
@@ -163,4 +163,32 @@ DynamicArray DynamicArray::operator*(int)
 		temp.ptr[i] = this->ptr[i] * 2;
 
 	return temp;
+}
+
+DynamicArray DynamicArray::operator+(const DynamicArray& b)
+{
+	int minSize = min(size, b.size);
+
+	DynamicArray temp(minSize);
+
+	for (int i = 0; i < minSize; i++)
+		temp.ptr[i] = this->ptr[i] + b.ptr[i];
+
+	return temp;
+}
+
+DynamicArray DynamicArray::operator--()
+{
+	for (int i = 0; i < size; i++)
+		ptr[i]--;
+
+	return *this; 
+}
+
+DynamicArray DynamicArray::operator++()
+{
+	for (int i = 0; i < size; i++)
+		ptr[i]++;
+
+	return *this; 
 }

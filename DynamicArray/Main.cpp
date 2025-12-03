@@ -56,5 +56,18 @@ int main()
 	DynamicArray y = x * 2;
 	y.Output();
 
+	DynamicArray t = y - x;
+	t.Output();
+
+	DynamicArray e = y + x;
+	e.Output();
+
+	++e;
+	e.Output();
+
+	--e;
+	e.Output();
+
+
 	system("pause");
 }

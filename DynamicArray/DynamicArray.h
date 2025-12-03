@@ -24,6 +24,9 @@ public:
 	DynamicArray operator-(int);
 	DynamicArray operator-(const DynamicArray& b);
 	DynamicArray operator*(int);
+	DynamicArray operator+(const DynamicArray& b);
+	DynamicArray operator--();
+	DynamicArray operator++();
 	// реилизовать следующие методы:
 	//void ReSize(int size);// изменение размера массива
 	//void Sort();// сортировка(любой алгоритм сортировки)
